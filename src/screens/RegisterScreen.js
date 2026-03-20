@@ -20,6 +20,7 @@ export default function RegisterScreen({ navigation }) {
   const { register } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -40,6 +41,11 @@ export default function RegisterScreen({ navigation }) {
       setError("La contraseña debe tener al menos 6 caracteres.");
       return;
     }
+
+    if (password !== confirmPassword) {
+  setError("Las contraseñas no coinciden.");
+  return;
+}
 
     setError("");
     setLoading(true);
@@ -62,6 +68,8 @@ export default function RegisterScreen({ navigation }) {
       password={password}
       onChangeEmail={setEmail}
       onChangePassword={setPassword}
+      confirmPassword={confirmPassword}
+onChangeConfirmPassword={setConfirmPassword}
       onSubmit={handleSubmit}
       submitLabel="Registrarme"
       error={error}
