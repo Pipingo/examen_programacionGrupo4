@@ -63,20 +63,19 @@ export default function RegisterScreen({ navigation }) {
 
   return (
     <AuthForm
-      title="Crear cuenta"
-      email={email}
-      password={password}
-      onChangeEmail={(text) => setEmail(text.trim())}
-      onChangePassword={setPassword}
-      confirmPassword={confirmPassword}
-onChangeConfirmPassword={setConfirmPassword}
-      onSubmit={handleSubmit}
-      submitLabel="Registrarme"
-      error={error}
-      footerText="Ya tienes cuenta?"
-      footerActionLabel="Iniciar sesion"
-      onFooterAction={() => navigation.navigate("Login")}
-      loading={loading}
-    />
+  title="Crear cuenta"
+  email={email}
+  password={password}
+  onChangeEmail={setEmail}
+  onChangePassword={setPassword}
+  onSubmit={handleSubmit}
+  submitLabel="Registrarme"
+  error={error}
+  footerText="Ya tienes cuenta?"
+  footerActionLabel="Iniciar sesion"
+  onFooterAction={() => navigation.navigate("Login")}
+  loading={loading}
+  disabled={loading}
+/>
   );
 }
