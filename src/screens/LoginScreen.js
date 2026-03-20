@@ -29,9 +29,14 @@ export default function LoginScreen({ navigation }) {
     const cleanEmail = email.trim().toLowerCase();
 
     if (!cleanEmail || !password.trim()) {
-      setError("Completa correo y contraseña.");
-      return;
-    }
+  setError("Completa correo y contraseña.");
+  return;
+}
+
+if (password.length < 6) {
+  setError("La contraseña debe tener al menos 6 caracteres.");
+  return;
+}
 
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(cleanEmail)) {
       setError("Ingresa un correo valido.");
