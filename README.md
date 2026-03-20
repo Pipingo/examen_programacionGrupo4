@@ -4,9 +4,15 @@
 Aplicación móvil con React Native (Expo) y Firebase que implementa un CRUD completo de inventario de productos con autenticación por usuario.
 
 **Integrantes:**
-- Edward 
+- Edward
+
+- 
 Arian
+
+
 Brayan
+
+
 Roy
 ## Tecnologías
 
@@ -18,37 +24,23 @@ Roy
 ## Cómo ejecutar (Para el profesor)
 
 ### Opción 1: RÁPIDA (Recomendado - Windows)
+clonar
 
-Simplemente ejecuta en PowerShell:
-```bash
-.\setup.bat
-npm.cmd run start
-```
-
-Listo. La app está en el aire.
-
-### Opción 2: Manual paso a paso
-
-1. Clonar repositorio:
-   ```bash
-   git clone https://github.com/Pipingo/examen_programacionGrupo4.git
-   cd examen_programacionGrupo4
-   ```
-
-2. Crear `.env` (copia el contenido de `.env.example`):
-   ```bash
-   copy .env.example .env
-   ```
-
-3. Instalar dependencias:
-   ```bash
+despues en la carpeta .env poner las credenciales 
+EXPO_PUBLIC_FIREBASE_API_KEY=AIzaSyDfJ1gmDu_3hkrT_o1op8F9pJWq8EV9hdM
+EXPO_PUBLIC_FIREBASE_AUTH_DOMAIN=inventario-de-productos-10cee.firebaseapp.com
+EXPO_PUBLIC_FIREBASE_PROJECT_ID=inventario-de-productos-10cee
+EXPO_PUBLIC_FIREBASE_STORAGE_BUCKET=inventario-de-productos-10cee.firebasestorage.app
+EXPO_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=741815843624
+EXPO_PUBLIC_FIREBASE_APP_ID=1:741815843624:web:15f211c03c465ee0f06e1d
+para que la app pueda ejecutarse
+ejecuta cmd en la carpeta
    npm install
-   ```
+npm.cmd run start
 
-4. Ejecutar:
-   ```bash
-   npm.cmd run start
-   ```
+
+
+
 
 Escanea el QR con **Expo Go**.
 
