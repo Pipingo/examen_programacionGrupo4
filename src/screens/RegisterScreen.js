@@ -66,7 +66,7 @@ export default function RegisterScreen({ navigation }) {
       title="Crear cuenta"
       email={email}
       password={password}
-      onChangeEmail={setEmail}
+      onChangeEmail={(text) => setEmail(text.trim())}
       onChangePassword={setPassword}
       confirmPassword={confirmPassword}
 onChangeConfirmPassword={setConfirmPassword}
