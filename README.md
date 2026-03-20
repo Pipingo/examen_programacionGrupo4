@@ -5,15 +5,17 @@ Aplicación móvil con React Native (Expo) y Firebase que implementa un CRUD com
 
 **Integrantes:**
 - Edward
-
 - 
-Arian
+- Arian
+- 
+- Brayan
+- 
+- Roy
 
 
-Brayan
 
 
-Roy
+
 ## Tecnologías
 
 - **React Native** + Expo (SDK 54)
@@ -33,9 +35,18 @@ EXPO_PUBLIC_FIREBASE_PROJECT_ID=inventario-de-productos-10cee
 EXPO_PUBLIC_FIREBASE_STORAGE_BUCKET=inventario-de-productos-10cee.firebasestorage.app
 EXPO_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=741815843624
 EXPO_PUBLIC_FIREBASE_APP_ID=1:741815843624:web:15f211c03c465ee0f06e1d
+
+
+
 para que la app pueda ejecutarse
+
+
 ejecuta cmd en la carpeta
+
+
    npm install
+
+   
 npm.cmd run start
 
 
