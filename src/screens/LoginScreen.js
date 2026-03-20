@@ -51,7 +51,7 @@ if (password.length < 6) {
     } catch (e) {
       const msg = mapFirebaseAuthError(e?.code);
       setError(msg);
-      Alert.alert("Error", msg);
+      // Alert.alert("Error", msg);
     } finally {
       setLoading(false);
     }
