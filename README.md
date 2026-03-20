@@ -4,8 +4,10 @@
 Aplicación móvil con React Native (Expo) y Firebase que implementa un CRUD completo de inventario de productos con autenticación por usuario.
 
 **Integrantes:**
-- Edward Parra Jara (parrexpro@gmail.com)
-
+- Edward 
+Arian
+Brayan
+Roy
 ## Tecnologías
 
 - **React Native** + Expo (SDK 54)
