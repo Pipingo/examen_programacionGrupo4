@@ -59,20 +59,21 @@ if (password.length < 6) {
 
   return (
     <AuthForm
-      title="Bienvenido"
-      subtitle="Accede a tu inventario personal"
-      email={email}
-      password={password}
-      onChangeEmail={setEmail}
-      onChangePassword={setPassword}
-      onSubmit={handleSubmit}
-      submitLabel="Entrar"
-      error={error}
-      showAvatar
-      footerText="No tienes cuenta?"
-      footerActionLabel="Registrate"
-      onFooterAction={() => navigation.navigate("Registro")}
-      loading={loading}
-    />
+  title="Bienvenido"
+  subtitle="Accede a tu inventario personal"
+  email={email}
+  password={password}
+  onChangeEmail={setEmail}
+  onChangePassword={setPassword}
+  onSubmit={handleSubmit}
+  submitLabel="Entrar"
+  error={error}
+  showAvatar
+  footerText="No tienes cuenta?"
+  footerActionLabel="Registrate"
+  onFooterAction={() => navigation.navigate("Registro")}
+  loading={loading}
+  disabled={loading}
+/>
   );
 }
