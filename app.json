@@ -1,0 +1,24 @@
+{
+  "expo": {
+    "name": "Inventario App",
+    "slug": "inventario-app",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "resizeMode": "contain",
+      "backgroundColor": "#f4f7fb"
+    },
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#f4f7fb"
+      }
+    },
+    "plugins": [
+      "expo-asset"
+    ]
+  }
+}
