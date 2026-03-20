@@ -5,7 +5,6 @@ import {
   deleteDoc,
   doc,
   onSnapshot,
-  orderBy,
   query,
   where
 } from "firebase/firestore";
@@ -25,17 +24,29 @@ export default function ProductListScreen({ navigation }) {
     }
 
     const productsRef = collection(db, "productos");
-    const q = query(productsRef, where("user_id", "==", user.uid), orderBy("createdAt", "desc"));
+    const q = query(productsRef, where("user_id", "==", user.uid));
 
     const unsub = onSnapshot(
       q,
       (snapshot) => {
-        const mapped = snapshot.docs.map((item) => ({ id: item.id, ...item.data() }));
+        const mapped = snapshot.docs
+          .map((item) => ({ id: item.id, ...item.data() }))
+          .sort((a, b) => {
+            const aSec = a?.createdAt?.seconds ?? 0;
+            const bSec = b?.createdAt?.seconds ?? 0;
+            return bSec - aSec;
+          });
+
+        setScreenError("");
         setProducts(mapped);
         setLoading(false);
       },
-      () => {
-        setScreenError("No se pudieron cargar tus productos.");
+      (error) => {
+        if (error?.code === "permission-denied") {
+          setScreenError("Sin permisos para leer productos. Revisa reglas de Firestore.");
+        } else {
+          setScreenError("No se pudieron cargar tus productos.");
+        }
         setLoading(false);
       }
     );

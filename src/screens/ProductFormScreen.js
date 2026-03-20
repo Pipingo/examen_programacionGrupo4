@@ -75,8 +75,13 @@ export default function ProductFormScreen({ navigation, route }) {
       }
 
       navigation.goBack();
-    } catch {
-      const msg = "No se pudo guardar el producto.";
+    } catch (e) {
+      let msg = "No se pudo guardar el producto.";
+
+      if (e?.code === "permission-denied") {
+        msg = "Sin permisos para guardar. Revisa reglas de Firestore.";
+      }
+
       setError(msg);
       Alert.alert("Error", msg);
     } finally {
