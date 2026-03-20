@@ -13,7 +13,7 @@ import { useAuth } from "../contexts/AuthContext";
 import { db } from "../services/firebase";
 
 export default function ProductListScreen({ navigation }) {
-  const { user, logout } = useAuth();
+  const { user } = useAuth();
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [screenError, setScreenError] = useState("");
@@ -75,8 +75,11 @@ export default function ProductListScreen({ navigation }) {
     <View style={styles.container}>
       <View style={styles.topBar}>
         <Text style={styles.email}>{user?.email}</Text>
-        <Pressable onPress={logout} style={styles.logoutButton}>
-          <Text style={styles.logoutText}>Salir</Text>
+        <Pressable
+          onPress={() => navigation.navigate("Usuario")}
+          style={styles.accountButton}
+        >
+          <Text style={styles.accountText}>Mi cuenta</Text>
         </Pressable>
       </View>
 
@@ -127,13 +130,13 @@ const styles = StyleSheet.create({
     flex: 1,
     marginRight: 10
   },
-  logoutButton: {
-    backgroundColor: "#e11d48",
+  accountButton: {
+    backgroundColor: "#334155",
     paddingHorizontal: 12,
     paddingVertical: 7,
     borderRadius: 10
   },
-  logoutText: {
+  accountText: {
     color: "#ffffff",
     fontWeight: "700"
   },

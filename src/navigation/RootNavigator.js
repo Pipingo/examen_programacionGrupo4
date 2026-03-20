@@ -6,6 +6,7 @@ import LoginScreen from "../screens/LoginScreen";
 import RegisterScreen from "../screens/RegisterScreen";
 import ProductListScreen from "../screens/ProductListScreen";
 import ProductFormScreen from "../screens/ProductFormScreen";
+import UserScreen from "../screens/UserScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -40,6 +41,11 @@ export default function RootNavigator() {
             options={({ route }) => ({
               headerTitle: route.params?.product ? "Editar producto" : "Nuevo producto"
             })}
+          />
+          <Stack.Screen
+            name="Usuario"
+            component={UserScreen}
+            options={{ headerTitle: "Mi cuenta" }}
           />
         </>
       ) : (
