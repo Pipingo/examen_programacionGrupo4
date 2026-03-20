@@ -55,6 +55,7 @@ export default function LoginScreen({ navigation }) {
   return (
     <AuthForm
       title="Bienvenido"
+      subtitle="Accede a tu inventario personal"
       email={email}
       password={password}
       onChangeEmail={setEmail}
@@ -62,6 +63,7 @@ export default function LoginScreen({ navigation }) {
       onSubmit={handleSubmit}
       submitLabel="Entrar"
       error={error}
+      showAvatar
       footerText="No tienes cuenta?"
       footerActionLabel="Registrate"
       onFooterAction={() => navigation.navigate("Registro")}
